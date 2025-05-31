@@ -1,38 +1,64 @@
-📚 EffiTron: Hybrid CNN-Transformer Architecture for Multi-Class Image Classification
-EffiTron combines the powerful local feature extraction capabilities of EfficientNetB0 with the global contextual understanding of a Transformer Encoder. This hybrid model is designed for robust and efficient multi-class image classification tasks.
+# 🚀 EffTransNet: Hybrid CNN-Transformer Architecture for Multi-Class Image Classification
 
-🏗️ Architecture Summary
-EffiTron integrates:
+EffTransNet is a **novel hybrid model** that combines a **convolutional backbone** with a **Transformer encoder** to leverage both local and global feature extraction capabilities for robust and accurate **multi-class image classification** tasks.
 
-EfficientNetB0 Backbone – Captures local spatial features.
+---
 
-Transformer Encoder Layers – Extracts global contextual relationships from reshaped feature sequences.
+## 🏗️ Architecture Overview
+EffTransNet integrates the best of both worlds:
+- **EfficientNetB0 Backbone**: Captures fine-grained local spatial features from input images.
+- **Transformer Encoder**: Models long-range dependencies by processing reshaped feature sequences into global contextual relationships.
 
-Dense Classifier – Outputs final class probabilities.
-🔬 Notation
-Symbol	Description
-𝐼 ∈ ℝᴴ×ᵂ×ᶜ	Input image
-𝐹 ∈ ℝʰ×ʷ×ᵈ	Feature map from EfficientNetB0
-𝑇 ∈ ℝ(ʰ⋅ʷ)×ᵈ	Reshaped sequence
-𝑑	Feature depth (1280 for EfficientNetB0)
-𝑁	Number of classes
-𝐿	Number of Transformer layers
-𝐻	Number of attention heads
+---
 
-🧮 Parameter Calculation
-EfficientNetB0 Output: 𝐹 ∈ ℝ⁷×⁷×¹²⁸⁰ (parameters ~5.3M)
+## 🔎 Notation
+- **𝐼 ∈ ℝᴴ×ᵂ×ᶜ** – Input image  
+- **𝐹 ∈ ℝʰ×ʷ×ᵈ** – Output feature map from EfficientNetB0  
+- **𝑇 ∈ ℝ(ʰ⋅ʷ)×ᵈ** – Reshaped sequence for Transformer input  
+- **𝑑** – Feature depth (1280 for EfficientNetB0)  
+- **𝑁** – Number of output classes  
+- **𝐿** – Number of Transformer encoder layers  
+- **𝐻** – Number of attention heads  
 
-Transformer Encoder Parameters:
+---
 
-For 1 layer (H=4, f=256): ~7.1M
+## 🔢 Parameter Calculation Summary
+### 1️⃣ EfficientNetB0 Feature Extraction  
+- **Output**: 𝐹 ∈ ℝ⁷×⁷×¹²⁸⁰  
+- **Parameters**: ~5.3M (pre-trained; can be frozen or fine-tuned)  
 
-For 2 layers: ~14.2M
+### 2️⃣ Sequence Reshaping  
+- 𝑇 = Reshape(𝐹) ∈ ℝ⁴⁹×¹²⁸⁰  
 
-Final Dense Layer:
-≈
-1280
-×
-𝑁
-+
-𝑁
-≈1280×N+N
+### 3️⃣ Transformer Encoder Block
+- **Multi-Head Self-Attention (MHSA)**:  
+  Parameters per layer: ~6.5M  
+- **Feed-Forward Network (FFN)**:  
+  Parameters per layer: ~655.8K  
+- **Total per Transformer layer**: ~7.1M  
+- **Total for 2 layers**: ~14.2M  
+
+### 🔚 Final Classifier
+- Parameters: ~1280×N + N  
+
+---
+
+## 🖼️ Architecture Diagram
+📌 *(Add a detailed architecture diagram here for better visualization)*  
+
+---
+
+## 📂 Repository Highlights
+✅ **Hybrid CNN-Transformer architecture** for robust feature extraction  
+✅ **Multi-class classification support** with configurable parameters  
+✅ **EfficientNetB0 backbone** with **Transformer encoder** for superior performance  
+✅ Well-documented architecture and implementation  
+
+---
+
+## 🛠️ Dependencies
+- TensorFlow 2.x  
+- NumPy  
+- Matplotlib *(for visualization)*  
+- *(Optional)* Pre-trained EfficientNetB0 weights  
+

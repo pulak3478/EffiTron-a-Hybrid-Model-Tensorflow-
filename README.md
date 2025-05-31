@@ -1,4 +1,4 @@
-# 🚀 EffiTron: Hybrid CNN-Transformer Architecture for Multi-Class Image Classification
+# 🚀 EffiTron: Hybrid CNN-Transformer Architecture for Multi-Class Image Classification using Tensorflow
 
 EffiTron is a **novel hybrid model** that combines a **convolutional backbone** with a **Transformer encoder** to leverage both local and global feature extraction capabilities for robust and accurate **multi-class image classification** tasks.
 

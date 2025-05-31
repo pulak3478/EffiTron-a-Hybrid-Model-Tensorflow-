@@ -1,11 +1,11 @@
-# 🚀 EffTransNet: Hybrid CNN-Transformer Architecture for Multi-Class Image Classification
+# 🚀 EffiTron: Hybrid CNN-Transformer Architecture for Multi-Class Image Classification
 
-EffTransNet is a **novel hybrid model** that combines a **convolutional backbone** with a **Transformer encoder** to leverage both local and global feature extraction capabilities for robust and accurate **multi-class image classification** tasks.
+EffiTron is a **novel hybrid model** that combines a **convolutional backbone** with a **Transformer encoder** to leverage both local and global feature extraction capabilities for robust and accurate **multi-class image classification** tasks.
 
 ---
 
 ## 🏗️ Architecture Overview
-EffTransNet integrates the best of both worlds:
+EffiTron integrates the best of both worlds:
 - **EfficientNetB0 Backbone**: Captures fine-grained local spatial features from input images.
 - **Transformer Encoder**: Models long-range dependencies by processing reshaped feature sequences into global contextual relationships.
 

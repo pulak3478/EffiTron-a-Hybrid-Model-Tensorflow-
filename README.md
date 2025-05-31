@@ -44,7 +44,7 @@ EffTransNet integrates the best of both worlds:
 ---
 
 ## 🖼️ Architecture Diagram
-📌 *(Add a detailed architecture diagram here for better visualization)*  
+📌 ![EffiTron Architecture](./effitorn_diagram.png)
 
 ---
 
